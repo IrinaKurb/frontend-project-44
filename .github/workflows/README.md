@@ -4,4 +4,5 @@ After completing all the steps in the project, automatic tests will become avail
 
 The hexlet-check.yml file is responsible for running these tests - do not delete this file, edit it, or rename the repository.
 
-[![asciicast](https://asciinema.org/a/574664.svg)](https://asciinema.org/a/574664)
+brain-even: [![asciicast](https://asciinema.org/a/574664.svg)](https://asciinema.org/a/574664)
+brain-calc: [![asciicast](https://asciinema.org/a/575556.svg)](https://asciinema.org/a/575556)
