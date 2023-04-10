@@ -1,10 +1,9 @@
-import { game, greeting } from '../index.js';
+import { game, greeting, gettingRandomNumber } from '../index.js';
 
 const gettingExercise = () => {
-  const min = 1;
-  const max = 1000;
-  const expressionForSolving = Math.floor(Math.random() * (max - min + 1) + min);
-  return expressionForSolving;
+  const exercise = gettingRandomNumber();
+  console.log(`Question: ${exercise}`);
+  return exercise;
 };
 
 const gettingRightAnswer = (randomNumber) => (randomNumber % 2 === 0 ? 'yes' : 'no');

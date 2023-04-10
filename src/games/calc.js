@@ -1,8 +1,9 @@
-import { greeting, game } from '../index.js';
+import { greeting, game, gettingRandomNumber } from '../index.js';
 
 let first = 0;
 let second = 0;
 let sign = '';
+let rightAnswer = 0;
 const signs = ['+', '-', '*'];
 
 const gettingSign = () => {
@@ -13,22 +14,14 @@ const gettingSign = () => {
   return randomSign;
 };
 
-const gettingRandomNumbers = () => {
-  const min = 1;
-  const max = 100;
-  const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-  return randomNumber;
-};
-
 const gettingExercise = () => {
-  first = gettingRandomNumbers();
-  second = gettingRandomNumbers();
+  first = gettingRandomNumber();
+  second = gettingRandomNumber();
   sign = gettingSign();
-  return (`${first} ${sign} ${second}`);
+  console.log(`Question: ${first} ${sign} ${second}`);
 };
 
 const gettingRightAnswer = () => {
-  let rightAnswer = 0;
   switch (sign) {
     case '+':
       rightAnswer = String(first + second);
