@@ -7,3 +7,4 @@ The hexlet-check.yml file is responsible for running these tests - do not delete
 brain-even: [![asciicast](https://asciinema.org/a/574664.svg)](https://asciinema.org/a/574664)
 brain-calc: [![asciicast](https://asciinema.org/a/575556.svg)](https://asciinema.org/a/575556)
 brain-gcd: [![asciicast](https://asciinema.org/a/576221.svg)](https://asciinema.org/a/576221)
+brain-progression: [![asciicast](https://asciinema.org/a/576480.svg)](https://asciinema.org/a/576480)
