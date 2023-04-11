@@ -1,4 +1,4 @@
-import { game, greeting, gettingRandomNumber } from '../index.js';
+import { game, gettingRandomNumber } from '../index.js';
 
 const gettingExercise = () => {
   const exercise = gettingRandomNumber();
@@ -9,9 +9,8 @@ const gettingExercise = () => {
 const gettingRightAnswer = (randomNumber) => (randomNumber % 2 === 0 ? 'yes' : 'no');
 
 const evenOdd = () => {
-  const userName = greeting();
   const taskForUser = 'Answer "yes" if the number is even, otherwise answer "no".';
-  game(taskForUser, userName, gettingExercise, gettingRightAnswer);
+  game(taskForUser, gettingExercise, gettingRightAnswer);
 };
 
 export default evenOdd;

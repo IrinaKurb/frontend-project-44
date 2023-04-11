@@ -1,44 +1,36 @@
-import { greeting, game, gettingRandomNumber } from '../index.js';
-
-let first = 0;
-let second = 0;
-let sign = '';
-let rightAnswer = 0;
-const signs = ['+', '-', '*'];
+import { game, gettingRandomNumber } from '../index.js';
 
 const gettingSign = () => {
+  const signs = ['+', '-', '*'];
   const min = 0;
   const max = signs.length - 1;
   const indexOfRandomSign = Math.floor(Math.random() * (max - min + 1) + min);
-  const randomSign = signs[indexOfRandomSign];
-  return randomSign;
+  return signs[indexOfRandomSign];
 };
 
 const gettingExercise = () => {
-  first = gettingRandomNumber();
-  second = gettingRandomNumber();
-  sign = gettingSign();
+  const first = gettingRandomNumber();
+  const second = gettingRandomNumber();
+  const sign = gettingSign();
   console.log(`Question: ${first} ${sign} ${second}`);
+  return [first, second, sign];
 };
 
-const gettingRightAnswer = () => {
+const gettingRightAnswer = (array) => {
+  const [firstNumber, secondNumber, sign] = array;
   switch (sign) {
     case '+':
-      rightAnswer = String(first + second);
-      break;
+      return String(firstNumber + secondNumber);
     case '-':
-      rightAnswer = String(first - second);
-      break;
+      return String(firstNumber - secondNumber);
     default:
-      rightAnswer = String(first * second);
+      return String(firstNumber * secondNumber);
   }
-  return rightAnswer;
 };
 
 const calc = () => {
-  const userName = greeting();
   const taskForUser = 'What is the result of the expression?';
-  game(taskForUser, userName, gettingExercise, gettingRightAnswer);
+  game(taskForUser, gettingExercise, gettingRightAnswer);
 };
 
 export default calc;

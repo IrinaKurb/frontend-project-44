@@ -1,4 +1,4 @@
-import { greeting, game, gettingRandomNumber } from '../index.js';
+import { game, gettingRandomNumber } from '../index.js';
 
 const gettingExercise = () => {
   const randomNumber = gettingRandomNumber();
@@ -7,14 +7,11 @@ const gettingExercise = () => {
 };
 
 const gettingRightAnswer = (randomNumber) => {
-  if (randomNumber === 1) {
-    return 'no';
-  }
   let divider = 2;
-  let rightAnswer = ' ';
+  let rightAnswer = '';
   do {
     const remainder = randomNumber % divider;
-    if (remainder !== 0) {
+    if (remainder !== 0 && randomNumber !== 1) {
       rightAnswer = 'yes';
       divider += 1;
     } else {
@@ -25,8 +22,8 @@ const gettingRightAnswer = (randomNumber) => {
 };
 
 const prime = () => {
-  const userName = greeting();
   const taskForUser = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  game(taskForUser, userName, gettingExercise, gettingRightAnswer);
+  game(taskForUser, gettingExercise, gettingRightAnswer);
 };
+
 export default prime;

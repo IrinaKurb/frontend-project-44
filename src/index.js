@@ -3,18 +3,18 @@ import readlineSync from 'readline-sync';
 const gettingRandomNumber = () => {
   const min = 1;
   const max = 100;
-  const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-  return randomNumber;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const greeting = () => {
+const greetingWithSaveName = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
 };
 
-const game = (taskForUser, userName, gettingExercise, gettingRightAnswer) => {
+const game = (taskForUser, gettingExercise, gettingRightAnswer) => {
+  const userName = greetingWithSaveName();
   console.log(taskForUser);
   for (let i = 1; i <= 3; i += 1) {
     const answer = gettingExercise();
@@ -31,4 +31,4 @@ const game = (taskForUser, userName, gettingExercise, gettingRightAnswer) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { greeting, game, gettingRandomNumber };
+export { game, gettingRandomNumber };

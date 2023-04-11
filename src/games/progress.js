@@ -1,4 +1,4 @@
-import { greeting, game, gettingRandomNumber } from '../index.js';
+import { game, gettingRandomNumber } from '../index.js';
 
 let delta = 0;
 
@@ -38,9 +38,8 @@ const gettingRightAnswer = (resultArray) => {
 };
 
 const progress = () => {
-  const userName = greeting();
   const taskForUser = 'What number is missing in the progression?';
-  game(taskForUser, userName, gettingExercise, gettingRightAnswer);
+  game(taskForUser, gettingExercise, gettingRightAnswer);
 };
 
 export default progress;
