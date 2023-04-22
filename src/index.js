@@ -9,7 +9,7 @@ export default (rules, execiseAndRightAnswer) => {
   const countOfAttempts = 3;
   for (let round = 1; round <= countOfAttempts; round += 1) {
     const [execise, rightAnswer] = execiseAndRightAnswer();
-    console.log(`Qustion: ${execise}`);
+    console.log(`Question: ${execise}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (rightAnswer === userAnswer) {
       console.log('Correct!');
