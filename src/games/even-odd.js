@@ -1,16 +1,15 @@
-import { game, gettingRandomNumber } from '../index.js';
+import game from '../index.js';
+import gettingRandomNumber from '../utils/random _number.js';
 
-const gettingExercise = () => {
-  const exercise = gettingRandomNumber();
-  console.log(`Question: ${exercise}`);
-  return exercise;
+const execiseAndRightAnswer = () => {
+  const execise = gettingRandomNumber();
+  const rightAnswer = execise % 2 === 0 ? 'yes' : 'no';
+  return [execise, rightAnswer];
 };
 
-const gettingRightAnswer = (randomNumber) => (randomNumber % 2 === 0 ? 'yes' : 'no');
-
-const evenOdd = () => {
+const startEvenGame = () => {
   const taskForUser = 'Answer "yes" if the number is even, otherwise answer "no".';
-  game(taskForUser, gettingExercise, gettingRightAnswer);
+  game(taskForUser, execiseAndRightAnswer);
 };
 
-export default evenOdd;
+export default startEvenGame;
