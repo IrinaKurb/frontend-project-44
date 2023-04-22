@@ -10,12 +10,12 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/IrinaKurb/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/IrinaKurb/frontend-project-44/actions)",
+  "description": "Brain-game is a console game that includes five mini-games for training the brain.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Irina Kurbanova",
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"
