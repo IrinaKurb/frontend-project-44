@@ -1,22 +1,26 @@
 import game from '../index.js';
-import gettingRandomNumber from '../utils/random _number.js';
+import { gettingRandomNumber } from '../utils.js';
 
-const execiseAndRightAnswer = () => {
-  const randomNumber = gettingRandomNumber();
-
+const isNumberPrime = (number) => {
   let divider = 2;
-  let rightAnswer = '';
+  let isPrime = null;
   do {
-    const remainder = randomNumber % divider;
-    if ((remainder !== 0 && randomNumber !== 1) || randomNumber === 2) {
-      rightAnswer = 'yes';
+    const remainder = number % divider;
+    if ((remainder !== 0 && number !== 1) || number === 2) {
+      isPrime = true;
       divider += 1;
     } else {
-      rightAnswer = 'no';
+      isPrime = false;
     }
-  } while (rightAnswer === 'yes' && divider < randomNumber);
+  } while (isPrime && divider < number);
 
-  return [randomNumber, rightAnswer];
+  return isPrime;
+};
+
+const execiseAndRightAnswer = () => {
+  const exercise = gettingRandomNumber();
+  const rightAnswer = isNumberPrime(exercise) ? 'yes' : 'no';
+  return [exercise, rightAnswer];
 };
 
 const startPrimeGame = () => {

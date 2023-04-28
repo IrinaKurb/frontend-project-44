@@ -1,6 +1,5 @@
-import gettingRandomNumber from '../utils/random _number.js';
-import gettingSign from '../utils/random_sign.js';
 import game from '../index.js';
+import { gettingRandomNumber, gettingSign } from '../utils.js';
 
 const execiseAndRightAnswer = () => {
   const firstNumber = gettingRandomNumber();
@@ -11,13 +10,13 @@ const execiseAndRightAnswer = () => {
   let rightAnswer = '';
   switch (sign) {
     case '+':
-      rightAnswer = String(firstNumber + secondNumber);
+      rightAnswer = firstNumber + secondNumber;
       break;
     case '-':
-      rightAnswer = String(firstNumber - secondNumber);
+      rightAnswer = firstNumber - secondNumber;
       break;
     default:
-      rightAnswer = String(firstNumber * secondNumber);
+      rightAnswer = firstNumber * secondNumber;
       break;
   }
   return [execise, rightAnswer];

@@ -1,5 +1,5 @@
 import game from '../index.js';
-import gettingRandomNumber from '../utils/random _number.js';
+import { gettingRandomNumber } from '../utils.js';
 
 const execiseAndRightAnswer = () => {
   const resultArray = [];
@@ -26,7 +26,7 @@ const execiseAndRightAnswer = () => {
   if (index === 0) {
     rightAnswer = resultArray[index + 1] - delta;
   }
-  return [(resultArray.join(' ')), String(rightAnswer)];
+  return [(resultArray.join(' ')), rightAnswer];
 };
 
 const startProgressionGame = () => {

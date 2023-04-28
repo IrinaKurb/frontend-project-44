@@ -1,5 +1,5 @@
 import game from '../index.js';
-import gettingRandomNumber from '../utils/random _number.js';
+import { gettingRandomNumber } from '../utils.js';
 
 const execiseAndRightAnswer = () => {
   let firstNumber = gettingRandomNumber();
@@ -7,11 +7,11 @@ const execiseAndRightAnswer = () => {
   const execise = `${firstNumber} ${secondNumber}`;
 
   while (secondNumber) {
-    const term = secondNumber;
+    const temporary = secondNumber;
     secondNumber = firstNumber % secondNumber;
-    firstNumber = term;
+    firstNumber = temporary;
   }
-  const rightAnswer = String(firstNumber);
+  const rightAnswer = firstNumber;
 
   return [execise, rightAnswer];
 };

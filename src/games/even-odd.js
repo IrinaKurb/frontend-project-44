@@ -1,9 +1,11 @@
 import game from '../index.js';
-import gettingRandomNumber from '../utils/random _number.js';
+import { gettingRandomNumber } from '../utils.js';
+
+const isEven = (number) => number % 2 === 0;
 
 const execiseAndRightAnswer = () => {
   const execise = gettingRandomNumber();
-  const rightAnswer = execise % 2 === 0 ? 'yes' : 'no';
+  const rightAnswer = isEven(execise) ? 'yes' : 'no';
   return [execise, rightAnswer];
 };
 

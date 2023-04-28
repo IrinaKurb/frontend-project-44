@@ -11,7 +11,7 @@ export default (rules, execiseAndRightAnswer) => {
     const [execise, rightAnswer] = execiseAndRightAnswer();
     console.log(`Question: ${execise}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (rightAnswer === userAnswer) {
+    if (String(rightAnswer) === userAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
