@@ -2,19 +2,15 @@ import game from '../index.js';
 import { gettingRandomNumber } from '../utils.js';
 
 const isNumberPrime = (number) => {
-  let divider = 2;
-  let isPrime = null;
-  do {
-    const remainder = number % divider;
-    if ((remainder !== 0 && number !== 1) || number === 2) {
-      isPrime = true;
-      divider += 1;
-    } else {
-      isPrime = false;
+  if (number === 1) {
+    return false;
+  }
+  for (let divider = 2; divider <= Math.sqrt(number); divider += 1) {
+    if (number % divider === 0) {
+      return false;
     }
-  } while (isPrime && divider < number);
-
-  return isPrime;
+  }
+  return true;
 };
 
 const execiseAndRightAnswer = () => {
