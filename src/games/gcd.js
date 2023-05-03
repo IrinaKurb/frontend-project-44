@@ -1,24 +1,25 @@
 import game from '../index.js';
-import { gettingRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
-const execiseAndRightAnswer = () => {
-  let firstNumber = gettingRandomNumber();
-  let secondNumber = gettingRandomNumber();
-  const execise = `${firstNumber} ${secondNumber}`;
+const exerciseAndRightAnswer = () => {
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
+  const exercise = `${firstNumber} ${secondNumber}`;
+  let rightAnswer = 1;
 
-  while (secondNumber) {
-    const temporary = secondNumber;
-    secondNumber = firstNumber % secondNumber;
-    firstNumber = temporary;
+  const minNumber = firstNumber >= secondNumber ? secondNumber : firstNumber;
+
+  for (let divider = 1; divider <= minNumber; divider += 1) {
+    if (firstNumber % divider === 0 && secondNumber % divider === 0) {
+      rightAnswer = divider;
+    }
   }
-  const rightAnswer = firstNumber;
-
-  return [execise, rightAnswer];
+  return [exercise, String(rightAnswer)];
 };
 
 const startGcdGame = () => {
   const taskForUser = 'Find the greatest common divisor of given numbers.';
-  game(taskForUser, execiseAndRightAnswer);
+  game(taskForUser, exerciseAndRightAnswer);
 };
 
 export default startGcdGame;
