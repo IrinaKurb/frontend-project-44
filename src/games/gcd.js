@@ -1,19 +1,22 @@
 import game from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const getGcd = (number1, number2) => {
+  let gcd = 1;
+  const minNumber = number1 >= number2 ? number2 : number1;
+  for (let i = 1; i <= minNumber; i += 1) {
+    if (number1 % i === 0 && number2 % i === 0) {
+      gcd = i;
+    }
+  }
+  return gcd;
+};
+
 const exerciseAndRightAnswer = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const exercise = `${firstNumber} ${secondNumber}`;
-  let rightAnswer = 1;
-
-  const minNumber = firstNumber >= secondNumber ? secondNumber : firstNumber;
-
-  for (let divider = 1; divider <= minNumber; divider += 1) {
-    if (firstNumber % divider === 0 && secondNumber % divider === 0) {
-      rightAnswer = divider;
-    }
-  }
+  const rightAnswer = getGcd(firstNumber, secondNumber);
   return [exercise, String(rightAnswer)];
 };
 

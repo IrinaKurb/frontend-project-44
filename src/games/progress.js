@@ -6,7 +6,7 @@ const exerciseAndRightAnswer = () => {
   const maxDelta = 10;
   const minDelta = 1;
 
-  const delta = Math.floor(Math.random() * (maxDelta - minDelta + 1) + minDelta);
+  const delta = getRandomNumber(minDelta, maxDelta);
   let startNumber = getRandomNumber();
   const progressLength = 10;
   resultArray.push(startNumber);
@@ -18,7 +18,7 @@ const exerciseAndRightAnswer = () => {
 
   const minIndex = 0;
   const maxIndex = progressLength - 1;
-  const indexMissingNumber = Math.floor(Math.random() * (maxIndex - minIndex + 1) + minIndex);
+  const indexMissingNumber = getRandomNumber(minIndex, maxIndex);
   resultArray[indexMissingNumber] = '..';
 
   const index = resultArray.indexOf('..');

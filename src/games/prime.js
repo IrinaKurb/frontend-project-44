@@ -5,8 +5,8 @@ const isNumberPrime = (number) => {
   if (number === 1) {
     return false;
   }
-  for (let divider = 2; divider <= Math.sqrt(number); divider += 1) {
-    if (number % divider === 0) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
       return false;
     }
   }
