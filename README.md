@@ -18,23 +18,37 @@
 1. Установите пакеты, необходимые для работы игры, при помощи команды 
 `npm install`, которая скачает их в папку проекта node_modules в соответствии с конфигурацией в файле package.json:
 
-    ```$ npm install```
+    ```
+    $ npm install
+    ```
 
 2. Установите пакет с игрой в систему с помощью команды: 
 
-    ```$ npm link```
+    ```
+    $ npm link
+    ```
 
 3. Запустите игру командами: 
 
-    ```$ brain-even```
+    ```
+    $ brain-even
+    ```
 
-    ```$ brain-calc```
+    ```
+    $ brain-calc
+    ```
 
-    ```$ brain-gcd```
+    ```
+    $ brain-gcd
+    ```
 
-    ```$ brain-progression```
+    ```
+    $ brain-progression
+    ```
 
-    ```$ brain-prime```
+    ```
+    $ brain-prime
+    ```
     
 
 Asciinema каждой игры:
