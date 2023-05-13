@@ -1,34 +1,41 @@
 import game from '../index.js';
-import getRandomNumber from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
-const exerciseAndRightAnswer = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
-  const signs = ['+', '-', '*'];
-  const indexOfSign = getRandomNumber(0, signs.length - 1);
-  const sign = signs[indexOfSign];
-  const exercise = `${firstNumber} ${sign} ${secondNumber}`;
+const taskForUser = ('What is the result of the expression?');
 
-  let rightAnswer = 0;
+const getAnswer = (number1, number2, sign) => {
+  let answer = null;
   switch (sign) {
     case '+':
-      rightAnswer = firstNumber + secondNumber;
+      answer = number1 + number2;
       break;
     case '-':
-      rightAnswer = firstNumber - secondNumber;
+      answer = number1 - number2;
       break;
     case '*':
-      rightAnswer = firstNumber * secondNumber;
+      answer = number1 * number2;
       break;
     default:
       throw new Error(`this sign was not found: '${sign}'`);
   }
+  return answer;
+};
+
+const getExerciseAndRightAnswer = () => {
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
+
+  const signs = ['+', '-', '*'];
+  const indexOfSign = getRandomNumber(0, signs.length - 1);
+  const sign = signs[indexOfSign];
+
+  const rightAnswer = getAnswer(firstNumber, secondNumber, sign);
+  const exercise = `${firstNumber} ${sign} ${secondNumber}`;
   return [exercise, String(rightAnswer)];
 };
 
 const startCalcGame = () => {
-  const taskForUser = ('What is the result of the expression?');
-  game(taskForUser, exerciseAndRightAnswer);
+  game(taskForUser, getExerciseAndRightAnswer);
 };
 
 export default startCalcGame;

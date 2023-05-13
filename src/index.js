@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (taskForUser, exerciseAndRightAnswer) => {
+export default (taskForUser, getExerciseAndRightAnswer) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -8,7 +8,7 @@ export default (taskForUser, exerciseAndRightAnswer) => {
 
   const countOfAttempts = 3;
   for (let i = 1; i <= countOfAttempts; i += 1) {
-    const [exercise, rightAnswer] = exerciseAndRightAnswer();
+    const [exercise, rightAnswer] = getExerciseAndRightAnswer();
     console.log(`Question: ${exercise}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (rightAnswer === userAnswer) {
